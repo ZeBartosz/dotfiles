@@ -1,0 +1,14 @@
+font-size = 15
+font-family = "GeistMono Nerd Font Mono"
+
+mouse-hide-while-typing = true
+
+background-opacity = 0.9
+background-blur = 20
+
+macos-titlebar-style = "hidden" 
+
+window-padding-x = 10
+window-padding-y = 1
+window-decoration = false
+gtk-titlebar = false
