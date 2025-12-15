@@ -3,8 +3,8 @@ font-family = "GeistMono Nerd Font Mono"
 
 mouse-hide-while-typing = true
 
-background-opacity = 0.9
-background-blur = 20
+# background-opacity = 0.6
+# background-blur = true
 
 macos-titlebar-style = "hidden" 
 

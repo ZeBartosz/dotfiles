@@ -1,0 +1,98 @@
+[
+  {
+    "context": "Editor && VimControl && vim_mode == normal && !menu",
+    "bindings": {
+      "ctrl-e": [
+        "task::Spawn",
+        { "task_name": "file_finder", "reveal_target": "center" }
+      ],
+
+      // +LSP
+      "space c r": "editor::Rename",
+      "space g d": "editor::GoToDefinition",
+      "space g D": "editor::GoToDefinitionSplit",
+      "space g i": "editor::GoToImplementation",
+      "space g I": "editor::GoToImplementationSplit",
+      "space g t": "editor::GoToTypeDefinition",
+      "space g T": "editor::GoToTypeDefinitionSplit",
+      "space g r": "editor::FindAllReferences",
+
+      "space l r": "editor::RestartLanguageServer",
+
+      "space h h ": "editor::Hover",
+      "space h s": "editor::ToggleCodeActions",
+
+      "] d": "editor::GoToDiagnostic",
+      "[ d": "editor::GoToPreviousDiagnostic",
+
+      // TODO: Go to next/prev error
+      "] e": "editor::GoToDiagnostic",
+      "[ e": "editor::GoToPreviousDiagnostic",
+
+      // Diagnostic
+      "space x x": "diagnostics::Deploy",
+
+      // +Git
+      // Git prev/next hunk
+      "] h": "editor::GoToHunk",
+      "[ h": "editor::GoToPreviousHunk",
+
+      "tab": "editor::Tab",
+      "shift-tab": "editor::Backtab"
+    }
+  },
+  // visual, visual line & visual block modes
+  {
+    "context": "Editor && VimControl && vim_mode == normal && !menu",
+    "bindings": {
+      "g c": "editor::ToggleComments"
+    }
+  },
+  // Workspace
+  {
+    "context": "Workspace",
+    "bindings": {
+      // File Finder
+      "ctrl-alt-e": "file_finder::Toggle",
+
+      "ctrl-e": [
+        "task::Spawn",
+        { "task_name": "file_finder", "reveal_target": "center" }
+      ],
+
+      // Git Panel
+      "ctrl-shift-g": [
+        "task::Spawn",
+        { "task_name": "LazyGit", "reveal_target": "center" }
+      ],
+
+      "ctrl-alt-g": "git_panel::ToggleFocus",
+
+      // Dock Toggle
+      "ctrl-b": "workspace::ToggleRightDock",
+      "ctrl-shift-a": "agent::ToggleFocus",
+      "ctrl-p": "command_palette::Toggle"
+    }
+  },
+  // Teerminal
+  {
+    "context": "Terminal",
+    "bindings": {
+      // "ctrl-/": "workspace::ToggleBottomDock",
+      "alt-j": ["workspace::SendKeystrokes", "down"],
+      "alt-k": ["workspace::SendKeystrokes", "up"]
+    }
+  },
+
+  {
+    "bindings": {
+      "ctrl-w w": "editor::ToggleFocus"
+    }
+  },
+  {
+    "context": "vim_mode == normal",
+    "bindings": {
+      "alt-/": "assistant::InlineAssist"
+    }
+  }
+]

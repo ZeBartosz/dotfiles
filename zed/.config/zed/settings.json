@@ -1,0 +1,175 @@
+{
+  // Ai
+  "show_edit_predictions": true,
+  "features": {
+    "edit_prediction_provider": "supermaven"
+  },
+  "disable_ai": false,
+  // Rest
+  "ensure_final_newline_on_save": false,
+  "indent_guides": {
+    "background_coloring": "disabled",
+    "coloring": "indent_aware",
+    "enabled": true
+  },
+  "tab_bar": {
+    "show": true
+  },
+  "title_bar": {
+    "show_menus": false,
+    "show_sign_in": true,
+    "show_user_picture": true,
+    "show_project_items": true
+  },
+  "auto_update": true,
+  "terminal": {
+    "button": false
+  },
+  "search": {
+    "button": true
+  },
+  "debugger": {
+    "button": false
+  },
+  "tabs": {
+    "git_status": true
+  },
+  "colorize_brackets": true,
+  // "theme_overrides": {
+  //   "One Dark": {
+  //     "accents": [
+  //       "#ff69b4",
+  //       "#7fff00",
+  //       "#ff1493",
+  //       "#00ffff",
+  //       "#ff8c00",
+  //       "#9400d3"
+  //     ]
+  //   }
+  // },
+
+  "agent_ui_font_size": 10.0,
+  "agent_buffer_font_size": 12.0,
+  "buffer_font_weight": 400.0,
+  "agent": {
+    "default_profile": "write",
+    "always_allow_tool_actions": true,
+    "default_model": {
+      "provider": "copilot_chat",
+      "model": "gpt-5-mini"
+    },
+    "button": true,
+    "inline_assistant_model": {
+      "provider": "copilot_chat",
+      "model": "gpt-5-mini"
+    },
+    "model_parameters": []
+  },
+
+  // "indent_guides": {
+  //   "enabled": true,
+  //   "coloring": "indent_aware",
+  //   "active_line_width": 2
+  // },
+
+  "collaboration_panel": {
+    "button": false,
+    "dock": "right"
+  },
+  "notification_panel": {
+    "button": false,
+    "dock": "right"
+  },
+  "outline_panel": {
+    "button": false,
+    "dock": "right"
+  },
+  "project_panel": {
+    "git_status": true,
+    "button": true,
+    "dock": "right"
+  },
+  "git_panel": {
+    "button": true,
+    "dock": "right"
+  },
+
+  "buffer_font_family": "JetBrainsMono Nerd Font",
+  "buffer_font_features": {
+    "calt": 0
+  },
+
+  "ui_font_family": "JetBrainsMono Nerd Font",
+  "vim_mode": true,
+  "base_keymap": "VSCode",
+  "icon_theme": "Material Icon Theme",
+  "ui_font_size": 10,
+  "buffer_font_size": 12.0,
+  "soft_wrap": "editor_width",
+  "theme": {
+    "mode": "dark",
+    "light": "Gruvbox Light",
+    "dark": "Rosé Pine"
+  },
+
+  // Diagnostics
+  "diagnostics": {
+    "button": true,
+    "inline": {
+      "enabled": true,
+      "max_severity": null
+    }
+  },
+
+  // Inline Hints
+  // "inlay_hints": {
+  //   "enabled": true,
+  //   "show_type_hints": true,
+  //   "show_parameter_hints": true,
+  //   "show_other_hints": true,
+  //   "show_background": false,
+  //   "edit_debounce_ms": 700,
+  //   "scroll_debounce_ms": 50,
+  //   "toggle_on_modifiers_press": null
+  // },
+
+  // Toolbar
+  "toolbar": {
+    "agent_review": true,
+    "selections_menu": true,
+    "breadcrumbs": false,
+    "quick_actions": false
+  },
+
+  // "status_bar": {
+  //   "experimental.show": false
+  // },
+  //
+
+  "status_bar": {
+    "active_language_button": true,
+    "cursor_position_button": true,
+    "notification-panel": false
+  },
+
+  "languages": {
+    "TypeScript": {
+      "show_edit_predictions": true
+    },
+    "CSS": {
+      "language_servers": [
+        "tailwindcss-language-server",
+        "vscode-css-language-server"
+      ],
+      "prettier": {}
+    },
+    "PHP": {
+      "language_servers": ["phpactor", "!intelephense", "..."],
+      "prettier": {
+        "allowed": true,
+        "plugins": ["@prettier/plugin-php"],
+        "parser": "php"
+      }
+    }
+  }
+}
