@@ -1,6 +1,6 @@
 font-size = 15
-font-family = "GeistMono Nerd Font Mono"
-theme = rose-pine
+font-family = "Geist Mono"
+theme = "Rose Pine"
 
 mouse-hide-while-typing = true
 
