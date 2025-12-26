@@ -102,8 +102,9 @@
 
   "ui_font_family": "JetBrainsMono Nerd Font",
   "vim_mode": true,
+  "which_key": { "enabled": true },
   "base_keymap": "VSCode",
-  "icon_theme": "Material Icon Theme",
+  "icon_theme": "JetBrains New UI Icons (Dark)",
   "ui_font_size": 14.0,
   "buffer_font_size": 16.0,
   "soft_wrap": "editor_width",

@@ -2,10 +2,7 @@
   {
     "context": "Editor && VimControl && vim_mode == normal && !menu",
     "bindings": {
-      "ctrl-e": [
-        "task::Spawn",
-        { "task_name": "file_finder", "reveal_target": "center" }
-      ],
+      "ctrl-e": "file_finder::Toggle",
 
       // +LSP
       "space c r": "editor::Rename",
@@ -53,12 +50,7 @@
     "context": "Workspace",
     "bindings": {
       // File Finder
-      "ctrl-alt-e": "file_finder::Toggle",
-
-      "ctrl-e": [
-        "task::Spawn",
-        { "task_name": "file_finder", "reveal_target": "center" }
-      ],
+      "ctrl-e": "file_finder::Toggle",
 
       // Git Panel
       "ctrl-shift-g": [
