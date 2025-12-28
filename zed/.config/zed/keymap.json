@@ -52,17 +52,23 @@
       // File Finder
       "ctrl-e": "file_finder::Toggle",
 
-      // Git Panel
-      "ctrl-shift-g": [
+      // Git
+      "alt-p": ["task::Spawn", { "task_name": "GitPR", "reveal_target": null }],
+      "alt-o": [
+        "task::Spawn",
+        { "task_name": "GitRepo", "reveal_target": null }
+      ],
+      "alt-g": "git_panel::ToggleFocus",
+      "alt-shift-g": [
         "task::Spawn",
         { "task_name": "LazyGit", "reveal_target": "center" }
       ],
 
-      "ctrl-alt-g": "git_panel::ToggleFocus",
-
       // Dock Toggle
-      "ctrl-b": "workspace::ToggleRightDock",
-      "ctrl-shift-a": "agent::ToggleFocus",
+      "alt-e": "project_panel::ToggleFocus",
+      "alt-b": "workspace::ToggleRightDock",
+      "alt-a": "agent::ToggleFocus",
+      "alt-x": "zed::Extensions",
       "ctrl-p": "command_palette::Toggle"
     }
   },

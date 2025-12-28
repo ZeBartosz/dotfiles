@@ -7,7 +7,7 @@ fi
 
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:$HOME/.local/bin:/usr/local/bin:$PATH
-export PATH="/home/zebartosz/.cache/.bun/bin:$PATH" 
+export PATH="/home/zebartosz/.cache/.bun/bin:$PATH"
 
 # Path to your Oh My Zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
@@ -147,6 +147,25 @@ alias ....='cd ../../..'
 
 # Other Binds
 alias zed='zeditor'
+
+# Worktree management
+unalias gwt
+
+gwt() {
+  local name="$1"
+  local base="${2:-HEAD}"
+
+  if [[ -z "$name" ]]; then
+    echo "Usage: gwt <worktree-name> [base-branch]"
+    return 1
+  fi
+
+  git worktree add -b "$name" "./.worktrees/$name" "$base"
+  cd "./.worktrees/$name"
+}
+gwtr() { command git worktree remove ./.worktrees/"$1" && git branch -D "$1"; }
+alias qwtcd='cd $(git worktree list --porcelain | grep "^worktree" | cut -d" " -f2 | fzf)'
+alias gwtl='git worktree list'
 
 export PATH=$HOME/.local/bin:$PATH
 
