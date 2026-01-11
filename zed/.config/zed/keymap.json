@@ -63,11 +63,15 @@
         "task::Spawn",
         { "task_name": "LazyGit", "reveal_target": "center" }
       ],
-
+      "alt-a": "terminal_panel::ToggleFocus",
+      "alt-shift-a": [
+        "task::Spawn",
+        { "task_name": "opencode", "reveal_target": "dock" }
+      ],
       // Dock Toggle
       "alt-e": "project_panel::ToggleFocus",
       "alt-b": "workspace::ToggleRightDock",
-      "alt-a": "agent::ToggleFocus",
+      "alt-ctrl-a": "agent::ToggleFocus",
       "alt-x": "zed::Extensions",
       "ctrl-p": "command_palette::Toggle"
     }

@@ -43,5 +43,14 @@
     "use_new_terminal": false,
     "show_summary": false,
     "show_command": false
+  },
+  // OpenCode
+  {
+    "label": "opencode",
+    "command": "opencode",
+    "reveal": "always",
+    "hide": "never",
+    "allow_concurrent_runs": false,
+    "use_new_terminal": false
   }
 ]
