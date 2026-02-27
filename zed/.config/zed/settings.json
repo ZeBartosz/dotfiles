@@ -1,10 +1,10 @@
 {
   // Ai
+  "edit_predictions": {
+    "provider": "zed",
+  },
   "disable_ai": false,
   "show_edit_predictions": true,
-  "features": {
-    "edit_prediction_provider": "zed",
-  },
   // Rest
   "ensure_final_newline_on_save": false,
   "indent_guides": {
@@ -54,11 +54,13 @@
   "agent_buffer_font_size": 12.0,
   "buffer_font_weight": 400.0,
   "agent": {
+    "tool_permissions": {
+      "default": "allow",
+    },
     "default_profile": "ask",
-    "always_allow_tool_actions": true,
     "default_model": {
-      "provider": "zed.dev",
-      "model": "gpt-5-nano",
+      "provider": "copilot_chat",
+      "model": "gpt-5-mini",
     },
     "button": true,
     "inline_assistant_model": {
@@ -104,9 +106,9 @@
 
   "ui_font_family": "JetBrainsMono Nerd Font",
   "vim_mode": true,
-  "which_key": { "enabled": true },
+  "which_key": { "enabled": true, "delay_ms": 100 },
   "base_keymap": "VSCode",
-  "icon_theme": "JetBrains New UI Icons (Dark)",
+  "icon_theme": "Warm Charmed Icons",
   "ui_font_size": 14.0,
   "buffer_font_size": 16.0,
   "soft_wrap": "editor_width",
@@ -156,24 +158,51 @@
     "notification-panel": false,
   },
 
+  "lsp": {
+    "oxlint": {
+      "initialization_options": {
+        "settings": {
+          "configPath": null,
+          "run": "onType",
+          "disableNestedConfig": false,
+          "fixKind": "safe_fix",
+          "typeAware": true,
+          "unusedDisableDirectives": "deny",
+        },
+      },
+    },
+    "oxfmt": {
+      "initialization_options": {
+        "settings": {
+          "configPath": "./.oxfmtrc.json",
+          "run": "onSave",
+        },
+      },
+    },
+  },
+
   "languages": {
     "TypeScript": {
       "show_edit_predictions": true,
       "format_on_save": "on",
+      "prettier": {
+        "allowed": false,
+      },
       "formatter": [
         {
           "language_server": {
             "name": "oxfmt",
           },
         },
-        {
-          "code_action": "source.fixAll.oxc",
-        },
       ],
     },
+
     "JavaScript": {
       "show_edit_predictions": true,
       "format_on_save": "on",
+      "prettier": {
+        "allowed": false,
+      },
       "formatter": [
         {
           "language_server": {
@@ -185,6 +214,7 @@
         },
       ],
     },
+
     "CSS": {
       "language_servers": [
         "tailwindcss-language-server",
@@ -194,41 +224,30 @@
         "source.fixAll.stylelint": true,
       },
 
-      "prettier": {},
-    },
-    "PHP": {
-      "language_servers": ["phpactor", "!intelephense", "..."],
       "prettier": {
-        "allowed": true,
-        "plugins": ["@prettier/plugin-php"],
-        "parser": "php",
+        "allowed": false,
       },
+      "formatter": [
+        {
+          "language_server": {
+            "name": "oxfmt",
+          },
+        },
+      ],
     },
-  },
 
-  "lsp": {
-    "oxlint": {
-      "initialization_options": {
-        "settings": {
-          "disableNestedConfig": false,
-          "fixKind": "safe_fix",
-          "run": "onType",
-          "typeAware": true,
-          "unusedDisableDirectives": "deny",
-        },
+    "PHP": {
+      "language_servers": ["!phpactor", "intelephense", "..."],
+      "prettier": {
+        "allowed": false,
       },
-    },
-    "oxfmt": {
-      "initialization_options": {
-        "settings": {
-          "configPath": ".oxfmtrc.json",
-          "fmt.configPath": ".oxfmtrc.json",
-          "fmt.experimental": true,
-          "run": "onSave",
-          "typeAware": false,
-          "unusedDisableDirectives": false,
+      "formatter": [
+        {
+          "language_server": {
+            "name": "oxfmt",
+          },
         },
-      },
+      ],
     },
   },
 }

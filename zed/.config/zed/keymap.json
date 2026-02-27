@@ -35,15 +35,21 @@
       "[ h": "editor::GoToPreviousHunk",
 
       "tab": "editor::Tab",
-      "shift-tab": "editor::Backtab"
-    }
+      "shift-tab": "editor::Backtab",
+    },
   },
   // visual, visual line & visual block modes
   {
     "context": "Editor && VimControl && vim_mode == normal && !menu",
     "bindings": {
-      "g c": "editor::ToggleComments"
-    }
+      "g c": "editor::ToggleComments",
+    },
+  },
+  {
+    "context": "(VimControl && !menu)",
+    "bindings": {
+      "space": null, // Disable the default action vim::WrappingRight
+    },
   },
   // Workspace
   {
@@ -56,25 +62,25 @@
       "alt-p": ["task::Spawn", { "task_name": "GitPR", "reveal_target": null }],
       "alt-o": [
         "task::Spawn",
-        { "task_name": "GitRepo", "reveal_target": null }
+        { "task_name": "GitRepo", "reveal_target": null },
       ],
       "alt-g": "git_panel::ToggleFocus",
       "alt-shift-g": [
         "task::Spawn",
-        { "task_name": "LazyGit", "reveal_target": "center" }
+        { "task_name": "LazyGit", "reveal_target": "center" },
       ],
-      "alt-a": "terminal_panel::ToggleFocus",
+      "ctrl-alt-a": "terminal_panel::ToggleFocus",
       "alt-shift-a": [
         "task::Spawn",
-        { "task_name": "opencode", "reveal_target": "dock" }
+        { "task_name": "opencode", "reveal_target": "dock" },
       ],
       // Dock Toggle
       "alt-e": "project_panel::ToggleFocus",
       "alt-b": "workspace::ToggleRightDock",
-      "alt-ctrl-a": "agent::ToggleFocus",
+      "alt-a": "agent::ToggleFocus",
       "alt-x": "zed::Extensions",
-      "ctrl-p": "command_palette::Toggle"
-    }
+      "ctrl-p": "command_palette::Toggle",
+    },
   },
   // Teerminal
   {
@@ -82,19 +88,19 @@
     "bindings": {
       // "ctrl-/": "workspace::ToggleBottomDock",
       "alt-j": ["workspace::SendKeystrokes", "down"],
-      "alt-k": ["workspace::SendKeystrokes", "up"]
-    }
+      "alt-k": ["workspace::SendKeystrokes", "up"],
+    },
   },
 
   {
     "bindings": {
-      "ctrl-w w": "editor::ToggleFocus"
-    }
+      "ctrl-w w": "editor::ToggleFocus",
+    },
   },
   {
     "context": "vim_mode == normal",
     "bindings": {
-      "alt-/": "assistant::InlineAssist"
-    }
-  }
+      "alt-/": "assistant::InlineAssist",
+    },
+  },
 ]

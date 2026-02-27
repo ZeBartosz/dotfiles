@@ -1,9 +1,18 @@
 #!/usr/bin/env bash
 
+if ! tmux has-session -t Home 2>/dev/null; then
+    tmux new-session -ds Home -c "$HOME"
+fi
+
 if [[ $# -eq 1 ]]; then
     selected=$1
 else
-    selected=$(find  ~/dev -mindepth 1 -maxdepth 2 -type d | fzf)
+	  selected=$(
+	    {
+	      printf '%s\n' "$HOME"
+	      find "$HOME/dev" -mindepth 1 -maxdepth 2 -type d
+	    } | fzf
+	  )
 fi
 
 if [[ -z $selected ]]; then
