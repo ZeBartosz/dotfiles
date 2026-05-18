@@ -225,3 +225,5 @@ zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'
 
 # Shell integration
 eval "$(fzf --zsh)"
+
+. "$HOME/.moon/bin/env"

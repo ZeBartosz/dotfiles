@@ -79,6 +79,7 @@
 			"alt-b": "workspace::ToggleRightDock",
 			"alt-a": "agent::ToggleFocus",
 			"alt-x": "zed::Extensions",
+			"alt-d": "diagnostics::Deploy",
 			"ctrl-p": "command_palette::Toggle",
 		},
 	},
@@ -97,5 +98,14 @@
 			"alt-/": "assistant::InlineAssist",
 		},
 	},
-	{ "context": "Editor", "bindings": { "ctrl-w": "pane::CloseActiveItem" } },
+	{
+		"context": "Editor",
+		"bindings": {
+			"ctrl-w": null,
+			"ctrl-j": ["editor::MoveDownByLines", { "lines": 15 }],
+			"ctrl-k": ["editor::MoveUpByLines", { "lines": 15 }],
+			"alt-j": "editor::MoveLineDown",
+			"alt-k": "editor::MoveLineUp",
+		},
+	},
 ]
